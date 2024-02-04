@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Be My Valentine</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background-color: #f5f5f5;
+      margin: 50px;
+    }
+    #valentine-card {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #e60000;
+    }
+    p {
+      font-size: 18px;
+      color: #333;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    #yes-button {
+      background-color: #e60000;
+      color: #fff;
+      border: none;
+    }
+    #no-button {
+      background-color: #333;
+      color: #fff;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+<div id="valentine-card">
+  <h1>Will You Be My Valentine?</h1>
+  <p>HOLAAA Shambavee,</p>
+  <p>First i'd like to apologize if this is... weird. But i needed to tell you. You have no idea how happy you make me. You're always on my mind. i didn't know how to ask you this so I made this html code to ask you to be my valentine, hehehehe. So.....Will you be my Valentine, my beloved?</p>
+  <button id="yes-button" onclick="sendResponse(true)">Yes!</button>
+  <button id="no-button" onclick="moveNoButton()">Nuh uh</button>
+</div>
+
+<script>
+  function sendResponse(isYes) {
+    if (isYes) {
+      alert("YIPEEEEE I LOVE YOU SHAMBAVEEE<3!");
+    } else {
+      alert("Nuh uh, try again :(");
+    }
+  }
+
+  function moveNoButton() {
+    var noButton = document.getElementById("no-button");
+    var maxX = window.innerWidth - noButton.clientWidth;
+    var maxY = window.innerHeight - noButton.clientHeight;
+    var newX = Math.floor(Math.random() * maxX);
+    var newY = Math.floor(Math.random() * maxY);
+
+    noButton.style.position = "absolute";
+    noButton.style.left = newX + "px";
+    noButton.style.top = newY + "px";
+  }
+</script>
+
+</body>
+</html>
